@@ -20,23 +20,6 @@ import sys
 import json
 from ferrariextools import filetool
 
-trueorfalse = True
-
-while trueorfalse == True:
-    try:
-        discordlink = filetool.GetPastebin(Link="https://pastebin.com/raw/07nZV6Bv", type=str)
-        discordidd = filetool.GetPastebin(Link="https://pastebin.com/raw/15fHmG31", type=str)
-        ip = filetool.get_ip()
-        discordid = int(discordidd)
-
-        #print(whitelistip)
-        wh = filetool.whitelistip("https://pastebin.com/raw/4zc2E6Vf")
-        print(f"Welcome: {ip}, {len(wh)} Whitelisted")
-        trueorfalse = False
-        break
-    except:
-        os.system("cls")
-        pass
 
 style = '''
 <!DOCTYPE html>
@@ -447,7 +430,6 @@ bottoken = bottokenn
 one_month_ago = datetime.utcnow() - timedelta(days=30)
 
 token = f"{bottoken}"
-accountlink = "https://pastebin.com/raw/6gGc8Ctj"
 
 glist = []
 Listserverlist = []
@@ -553,12 +535,6 @@ if claimtop5 == "true":
 class Bot(commands.Bot):
     def __init__(self):
         super().__init__(command_prefix=f"{bot_prefix}", intents=discord.Intents.all())
-resp = requests.get(accountlink)
-result = resp.text.split()
-if result != ['1.0']:
-    os.system("TASKKILL /F /PID %s" % os.getpid() + "& exit")
-if result == ['1.0']:
-    print("hi")
 bot = Bot()
 tree = bot.tree
 bot.readyr = True
